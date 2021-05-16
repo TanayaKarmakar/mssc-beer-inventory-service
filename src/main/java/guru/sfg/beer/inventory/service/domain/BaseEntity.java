@@ -16,9 +16,7 @@
  */
 package guru.sfg.beer.inventory.service.domain;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Type;
@@ -32,19 +30,11 @@ import java.util.UUID;
  * Created by jt on 2019-01-26.
  */
 
-@Setter
-@Getter
-@NoArgsConstructor
+//@Data
 @MappedSuperclass
+//@NoArgsConstructor
+//@Builder
 public class BaseEntity {
-
-    public BaseEntity(UUID id, Long version, Timestamp createdDate, Timestamp lastModifiedDate) {
-        this.id = id;
-        this.version = version;
-        this.createdDate = createdDate;
-        this.lastModifiedDate = lastModifiedDate;
-    }
-
     @Id
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(
@@ -67,5 +57,37 @@ public class BaseEntity {
 
     public boolean isNew() {
         return this.id == null;
+    }
+
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public Long getVersion() {
+        return version;
+    }
+
+    public void setVersion(Long version) {
+        this.version = version;
+    }
+
+    public Timestamp getCreatedDate() {
+        return createdDate;
+    }
+
+    public void setCreatedDate(Timestamp createdDate) {
+        this.createdDate = createdDate;
+    }
+
+    public Timestamp getLastModifiedDate() {
+        return lastModifiedDate;
+    }
+
+    public void setLastModifiedDate(Timestamp lastModifiedDate) {
+        this.lastModifiedDate = lastModifiedDate;
     }
 }

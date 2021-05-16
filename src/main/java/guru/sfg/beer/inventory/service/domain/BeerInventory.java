@@ -16,38 +16,45 @@
  */
 package guru.sfg.beer.inventory.service.domain;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.Entity;
-import java.sql.Timestamp;
 import java.util.UUID;
 
 /**
  * Created by jt on 2019-01-26.
  */
-@Getter
-@Setter
-//@NoArgsConstructor
+//@EqualsAndHashCode(callSuper = true)
+//@Data
 @Entity
+//@Builder
 public class BeerInventory extends BaseEntity{
-    @Builder
-    public BeerInventory() {
-
-    }
-
-    @Builder
-    public BeerInventory(UUID id, Long version, Timestamp createdDate, Timestamp lastModifiedDate, UUID beerId,
-                         String upc, Integer quantityOnHand) {
-        super(id, version, createdDate, lastModifiedDate);
-        this.beerId = beerId;
-        this.upc = upc;
-        this.quantityOnHand = quantityOnHand;
-    }
 
     private UUID beerId;
     private String upc;
     private Integer quantityOnHand = 0;
+
+    public UUID getBeerId() {
+        return beerId;
+    }
+
+    public void setBeerId(UUID beerId) {
+        this.beerId = beerId;
+    }
+
+    public String getUpc() {
+        return upc;
+    }
+
+    public void setUpc(String upc) {
+        this.upc = upc;
+    }
+
+    public Integer getQuantityOnHand() {
+        return quantityOnHand;
+    }
+
+    public void setQuantityOnHand(Integer quantityOnHand) {
+        this.quantityOnHand = quantityOnHand;
+    }
 }

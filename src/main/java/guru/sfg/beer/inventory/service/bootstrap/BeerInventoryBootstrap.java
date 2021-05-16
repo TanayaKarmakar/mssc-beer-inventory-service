@@ -33,27 +33,40 @@ public class BeerInventoryBootstrap implements CommandLineRunner {
     }
 
     private void loadInitialInv() {
-        beerInventoryRepository.save(BeerInventory
-                .builder()
-                .beerId(BEER_1_UUID)
-                .upc(BEER_1_UPC)
-                .quantityOnHand(50)
-                .build());
+//        beerInventoryRepository.save(BeerInventory
+//                .builder()
+//                .beerId(BEER_1_UUID)
+//                .upc(BEER_1_UPC)
+//                .quantityOnHand(50)
+//                .build());
+        beerInventoryRepository.save(createInventory(BEER_1_UUID, BEER_1_UPC, 50));
 
-        beerInventoryRepository.save(BeerInventory
-                .builder()
-                .beerId(BEER_2_UUID)
-                .upc(BEER_2_UPC)
-                .quantityOnHand(50)
-                .build());
+//        beerInventoryRepository.save(BeerInventory
+//                .builder()
+//                .beerId(BEER_2_UUID)
+//                .upc(BEER_2_UPC)
+//                .quantityOnHand(50)
+//                .build());
 
-        beerInventoryRepository.saveAndFlush(BeerInventory
-                .builder()
-                .beerId(BEER_3_UUID)
-                .upc(BEER_3_UPC)
-                .quantityOnHand(50)
-                .build());
+        beerInventoryRepository.save(createInventory(BEER_2_UUID, BEER_2_UPC, 50));
+
+//        beerInventoryRepository.saveAndFlush(BeerInventory
+//                .builder()
+//                .beerId(BEER_3_UUID)
+//                .upc(BEER_3_UPC)
+//                .quantityOnHand(50)
+//                .build());\
+
+        beerInventoryRepository.save(createInventory(BEER_3_UUID, BEER_3_UPC, 50));
 
         log.debug("Loaded Inventory. Record count: " + beerInventoryRepository.count());
+    }
+
+    private BeerInventory createInventory(UUID uuid, String upc, Integer quantityOnHand) {
+        BeerInventory beerInventory = new BeerInventory();
+        beerInventory.setBeerId(uuid);
+        beerInventory.setUpc(upc);
+        beerInventory.setQuantityOnHand(quantityOnHand);
+        return beerInventory;
     }
 }
