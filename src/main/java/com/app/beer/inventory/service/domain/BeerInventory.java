@@ -14,18 +14,45 @@
  *     You should have received a copy of the GNU General Public License
  *     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-package guru.sfg.beer.inventory.service.repositories;
+package com.app.beer.inventory.service.domain;
 
-import guru.sfg.beer.inventory.service.domain.BeerInventory;
-import org.springframework.data.jpa.repository.JpaRepository;
-
-import java.util.List;
+import javax.persistence.Entity;
 import java.util.UUID;
 
 /**
  * Created by jt on 2019-01-26.
  */
-public interface BeerInventoryRepository extends JpaRepository<BeerInventory, UUID> {
+//@EqualsAndHashCode(callSuper = true)
+//@Data
+@Entity
+//@Builder
+public class BeerInventory extends BaseEntity{
 
-    List<BeerInventory> findAllByBeerId(UUID beerId);
+    private UUID beerId;
+    private String upc;
+    private Integer quantityOnHand = 0;
+
+    public UUID getBeerId() {
+        return beerId;
+    }
+
+    public void setBeerId(UUID beerId) {
+        this.beerId = beerId;
+    }
+
+    public String getUpc() {
+        return upc;
+    }
+
+    public void setUpc(String upc) {
+        this.upc = upc;
+    }
+
+    public Integer getQuantityOnHand() {
+        return quantityOnHand;
+    }
+
+    public void setQuantityOnHand(Integer quantityOnHand) {
+        this.quantityOnHand = quantityOnHand;
+    }
 }
