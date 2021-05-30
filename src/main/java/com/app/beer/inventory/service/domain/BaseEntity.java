@@ -32,7 +32,7 @@ import java.util.UUID;
 
 //@Data
 @MappedSuperclass
-//@NoArgsConstructor
+@NoArgsConstructor
 //@Builder
 public class BaseEntity {
     @Id

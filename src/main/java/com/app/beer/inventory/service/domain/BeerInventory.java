@@ -16,6 +16,10 @@
  */
 package com.app.beer.inventory.service.domain;
 
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.Entity;
 import java.util.UUID;
 
@@ -23,7 +27,7 @@ import java.util.UUID;
  * Created by jt on 2019-01-26.
  */
 //@EqualsAndHashCode(callSuper = true)
-//@Data
+@Data
 @Entity
 //@Builder
 public class BeerInventory extends BaseEntity{
