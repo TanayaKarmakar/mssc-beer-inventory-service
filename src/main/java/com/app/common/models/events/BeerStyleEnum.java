@@ -1,4 +1,4 @@
-package com.app.common.events;
+package com.app.common.models.events;
 
 /**
  * @author t0k02w6 on 07/05/21

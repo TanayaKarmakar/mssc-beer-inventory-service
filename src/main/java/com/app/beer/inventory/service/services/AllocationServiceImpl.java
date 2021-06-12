@@ -2,8 +2,8 @@ package com.app.beer.inventory.service.services;
 
 import com.app.beer.inventory.service.domain.BeerInventory;
 import com.app.beer.inventory.service.repositories.BeerInventoryRepository;
-import com.app.common.model.BeerOrderDto;
-import com.app.common.model.BeerOrderLineDto;
+import com.app.common.models.BeerOrderDto;
+import com.app.common.models.BeerOrderLineDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

@@ -1,6 +1,6 @@
-package com.app.common.events;
+package com.app.common.models.events;
 
-import com.app.common.model.BeerOrderDto;
+import com.app.common.models.BeerOrderDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,6 +12,8 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class DeallocateOrderRequest {
+public class AllocateOrderResult {
     private BeerOrderDto beerOrderDto;
+    private Boolean allocationError = false;
+    private Boolean pendingInventory = false;
 }

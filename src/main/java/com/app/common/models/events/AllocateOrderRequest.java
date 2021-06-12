@@ -1,6 +1,6 @@
-package com.app.common.events;
+package com.app.common.models.events;
 
-import com.app.common.model.BeerOrderDto;
+import com.app.common.models.BeerOrderDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

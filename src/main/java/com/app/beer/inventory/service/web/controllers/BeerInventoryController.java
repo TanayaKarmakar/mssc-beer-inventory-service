@@ -1,7 +1,7 @@
 package com.app.beer.inventory.service.web.controllers;
 
 import com.app.beer.inventory.service.web.mappers.BeerInventoryMapper;
-import com.app.common.model.BeerInventoryDto;
+import com.app.common.models.BeerInventoryDto;
 import com.app.beer.inventory.service.repositories.BeerInventoryRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

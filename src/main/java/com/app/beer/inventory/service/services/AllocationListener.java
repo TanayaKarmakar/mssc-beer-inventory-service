@@ -1,8 +1,8 @@
 package com.app.beer.inventory.service.services;
 
 import com.app.beer.inventory.service.config.JmsConfig;
-import com.app.common.events.AllocateOrderRequest;
-import com.app.common.events.AllocateOrderResult;
+import com.app.common.models.events.AllocateOrderRequest;
+import com.app.common.models.events.AllocateOrderResult;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.jms.annotation.JmsListener;
